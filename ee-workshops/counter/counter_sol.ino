@@ -40,39 +40,43 @@ void loop() {
   // take a measurement from the potentiometer
   int pot_read = analogRead(pot_in);
 
-  // TODO: check if pin 1 should be on (if even number)
-  if (____) {
+  // check if pin 1 should be on (if even number)
+  if ((i % 2) > 0) {
     digitalWrite(pin1, HIGH);
   } else {
     digitalWrite(pin1, LOW);
   }
 
-  /* TODO: check if pin 2 should be on 
+  /* check if pin 2 should be on 
    * (if has a 2 in its binary expansion)
    */
-  if (____) {
+  if ((i % 4) > 1) {
     digitalWrite(pin2, HIGH);
   } else {
     digitalWrite(pin2, LOW);
   }
 
-  /* TODO: check if pin 3 should be on
-   * (if has a 4 in its binary expansion)
+  /* check if pin 3 should be on
+   * (if has an 4 in its binary expansion)
    */
-  if (____) {
+  if ((i % 8) > 3) {
     digitalWrite(pin3, HIGH);
   } else {
     digitalWrite(pin3, LOW);
   }
 
-  /* TODO: check if pin 4 should be on
+  /* check if pin 4 should be on
    * (if has an 8 in its binary expansion)
    */
-  if (____) {
+  if ((i % 16) > 7) {
     digitalWrite(pin4, HIGH);
   } else {
     digitalWrite(pin4, LOW);
   }
+  digitalWrite(pin1, HIGH);
+  digitalWrite(pin2, HIGH);
+  digitalWrite(pin3, LOW);
+  digitalWrite(pin4, LOW);
 
   // scale analog reading & clip minimum frequency
   Serial.println(pot_read);
