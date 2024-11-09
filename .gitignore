@@ -153,3 +153,6 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+# .DS_store
+.DS_Store
