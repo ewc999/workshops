@@ -124,9 +124,10 @@ Let True be `0b1` and False be `0b0` - our computers count in binary!
 
 For the mathematically inclined, for some base-$b$ counting system with a set of possible digits $d_i \in \{0, 1, \ldots, b - 1\}$, the number $n$ can be uniquely represented by the expression
 
-\begin{equation}
+
+$$
 n = \sum_{i = 0}^{b - 1} d_i b^i
-\end{equation}
+$$
 
 
 <a id="orgc59861e"></a>
@@ -145,18 +146,35 @@ Thus, we will control its speed using a [potentiometer](https://en.wikipedia.org
 <a id="orgaccd8e0"></a>
 
 # Materials
+<figure>
+  <img src="./images/led.png" alt="LED Image" />
+  <figcaption>LED (4x): A light-emitting diode lights up when electricity passes through it. Attention: The LED legs have different lengths; the long one is positive, and the short one is negative; <i>the orientation matters!</i></figcaption>
+</figure>
 
-![img](./images/led.png "LED (4x): A light-emitting diode lights up when electricity passes through it. **Attention: The LED legs have different lengths, the long one being the positive one and the short one being negative; the orientation matters!**")
+<figure>
+  <img src="./images/resistor1.png" alt="Resistor Image" />
+  <figcaption>Resistor (4x): A resistor is a device that restricts the flow of electric current into our LEDs, preventing them from overloading. The strength of a resistor is controlled by its resistance, which, in our case, is \qty{1}{\kilo\ohm} (kilo-ohm). To verify your resistor is correct, check the color stripes are, in order, brown, black, red, and gold.</figcaption>
+</figure>
 
-![img](./images/resistor.png "Resistor (4x): A resistor is a device that restricts the flow of electric current into our LEDs, preventing them from overloading. The strength of a resistor is controlled by its resistance, which, in our case, is \qty{1}{\kilo\ohm} (kilo-ohm). To verify your resistor is correct, check the color stripes are, in order, brown, black, red, and gold.")
+<figure>
+  <img src="./images/potresize.png" alt="Potentiometer Image" />
+  <figcaption>Potentiometer (1x): A device that controls the voltage passing through it. In other words, it is a resistor you can change the value of! The middle pin is the output. From the two-pin side, the pin close to the marking is the input and the other one should be connected to ground.</figcaption>
+</figure>
 
-![img](./images/pot.png "Potentiometer (1x): A device that controls the voltage passing through it. In other words, it is a resistor you can change the value of! The middle pin is the output. From the two-pin side, the pin close to the marking is the input and the other one should be connected to ground.")
+<figure>
+  <img src="./images/microcontrollerresize.jpg" alt="Microcontroller Image" />
+  <figcaption>Microcontroller (1x): Our <a href=https://www.adafruit.com/product/3591> Adafruit ESP32 Feather</a> has an embedded computer that will control our circuit. We will go into more detail later. Note the Micro-USB port on the top. <b>Call one of us over to verify your circuit is correct before plugging your ESP in.</b></figcaption>
+</figure>
 
-![img](./images/microcontroller.jpg "Microcontroller (1x): Our [Adafruit ESP32 Feather](https://www.adafruit.com/product/3591) has an embedded computer that will control our circuit. We will go into more detail later. Note the Micro-USB port on the top. **We will pass these out to you after you come up to us and verify your circuit is correct.**")
+<figure>
+  <img src="./images/breadboardresize.jpg" alt="Breadboard Image" />
+  <figcaption>Breadboard (1x): A platform full of holes where you can stick wires and components to organize your circuit and prevent them from falling out. We will go into more detail later.</figcaption>
+</figure>
 
-![img](./images/breadboard.jpg "Breadboard (1x): A platform full of holes where you can stick wires and components to organize your circuit and prevent them from falling out. We will go into more detail later.")
-
-![img](./images/wires.jpg "Wires (at least 10).")
+<figure>
+  <img src="./images/wiresresize.jpg" alt="Wires Image" />
+  <figcaption>Wires (>= 10x)</figcaption>
+</figure>
 
 
 <a id="orgaad83c9"></a>
@@ -206,8 +224,8 @@ We will use our potentiometer to control the voltage at pin `32`, so we can cont
 
 Below you will see a diagram of the circuit we are trying to create.
 Our actual microcontroller will fit in the middle of the breadboard along rows 1-17.
-It will supply power and ground to our LEDs and potentiometer.
-It will also produce voltages across pins `A0`, `A1`, `A5`, and `21` to count numbers.
+
+It will produce voltages periodically across pins `A0`, `A1`, `A5`, and `21` to count numbers.
 Notice how the signal from each microcontroller LED pin goes through a resistor then into an LED.
 This part of the circuit is to light up the LED corresponding to each pin.
 
@@ -218,7 +236,9 @@ Hopefully this diagram is less scary now and the overall picture is coming toget
 
 ## Breadboard Diagram
 
-![img](./images/tinkercad.png)
+![img](./images/tinkercadwmicrocontroller.jpg)
+
+Brown rectangle is the microcontroller.
 
 Each color wire represents a pin from the microcontroller.
 
